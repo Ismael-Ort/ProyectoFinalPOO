@@ -1,14 +1,14 @@
 package logico;
 
-public class Jurado extends Persona {
+public class Jurado extends Persona{
 	
 	private String Codjurado;
 	private String areaespecializado;
 
      public Jurado(String cedula, String nombre, String telefono,String Codjurado,String areaespecializado) {
 		super(cedula, nombre, telefono);
-		this.Codjurado=Codjurado;
-		this.areaespecializado=areaespecializado;
+		this.Codjurado = Codjurado;
+		this.areaespecializado = areaespecializado;
 	}
 
 	public String getCodjurado() {
