@@ -2,21 +2,21 @@ package logico;
 
 public class Jurado extends Persona{
 	
-	private String Codjurado;
+	private String idjurado;
 	private String areaespecializado;
 
-     public Jurado(String cedula, String nombre, String telefono,String Codjurado,String areaespecializado) {
-		super(cedula, nombre, telefono);
-		this.Codjurado = Codjurado;
+	public Jurado(String cedula, String nombre, String telefono,String Codjurado,String areaespecializado) {
+    	super(cedula, nombre, telefono);
+		this.idjurado = Codjurado;
 		this.areaespecializado = areaespecializado;
 	}
 
 	public String getCodjurado() {
-		return Codjurado;
+		return idjurado;
 	}
 
 	public void setCodjurado(String Codjurado) {
-		this.Codjurado = Codjurado;
+		this.idjurado = Codjurado;
 	}
 
 	public String getAreaespecializado() {
