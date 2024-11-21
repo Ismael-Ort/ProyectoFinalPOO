@@ -5,6 +5,7 @@ import java.util.Date;
 public class Evento {
 	
 	private Date fecha;
+	
 
 	public Date getFecha() {
 		return fecha;
