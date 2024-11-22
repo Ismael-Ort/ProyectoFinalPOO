@@ -16,5 +16,48 @@ public class TrabajoCientifico {
 		calificacion = 0;
 		this.titulo = titulo;
 		primeracalificaion = false;
+		
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public Participante getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Participante propietario) {
+		this.propietario = propietario;
+	}
+
+	public float getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(float calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public boolean isPrimeracalificaion() {
+		return primeracalificaion;
+	}
+
+	public void setPrimeracalificaion(boolean primeracalificaion) {
+		this.primeracalificaion = primeracalificaion;
+		
 	}
 }
+
