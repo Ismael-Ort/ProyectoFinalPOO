@@ -2,6 +2,7 @@ package logico;
 
 import java.util.ArrayList;
 
+import logico.TrabajoCientifico;
 import logico.Jurado;
 import logico.TrabajoCientifico;
 
@@ -62,6 +63,17 @@ public class Comision {
 		this.trabajos = trabajos;
 	}
 	
-	
+	public void removertrabajo(TrabajoCientifico trabajo) {
+		int i = 0;
+		boolean encontrado = false;
+		while (i < trabajos.size() && encontrado != true) {
+			if(trabajos.get(i).getCodigo().equalsIgnoreCase(trabajo.getCodigo())) {
+				trabajos.remove(i);
+				encontrado = true;
+			}
+			i++;
+		}
+		
+	}
 
 }
