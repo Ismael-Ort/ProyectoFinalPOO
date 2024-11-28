@@ -98,8 +98,7 @@ public class RegistrarPersona extends JDialog {
 			setTitle("Registro Personas");
 			rdbtnjurado.setSelected(true);
 		}
-		setBounds(100, 100, 452, 459);
-		setBounds(100, 100, 471, 470);
+		setBounds(100, 100, 481, 492);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(51, 0, 204));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -188,7 +187,7 @@ public class RegistrarPersona extends JDialog {
 			panel.setBackground(new Color(255, 204, 51));
 
 			panel.setBorder(new TitledBorder(null, "Tipo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel.setBounds(10, 112, 414, 55);
+			panel.setBounds(10, 338, 414, 55);
 			contentPanel.add(panel);
 			panel.setLayout(null);
 			
@@ -215,8 +214,8 @@ public class RegistrarPersona extends JDialog {
 			JPanel panel = new JPanel();
 
 			panel.setBackground(new Color(255, 204, 51));
-			panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Proyecto", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-			panel.setBounds(10, 178, 414, 198);
+			panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Seleccion de area y trabajo", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+			panel.setBounds(10, 127, 414, 198);
 			contentPanel.add(panel);
 			panel.setLayout(null);
 			{
@@ -251,7 +250,7 @@ public class RegistrarPersona extends JDialog {
 			}
 			{
 				lblarea = new JLabel("Area de especializacion:");
-				lblarea.setBounds(10, 50, 144, 14);
+				lblarea.setBounds(10, 48, 144, 14);
 				panel.add(lblarea);
 			}
 			{
