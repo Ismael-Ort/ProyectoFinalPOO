@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.border.TitledBorder;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
@@ -49,6 +50,9 @@ public class MenuPrincipal extends JFrame {
 		JMenuItem mntmNewMenuItem = new JMenuItem("Registrar");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RegistrarPersona aux = new RegistrarPersona(null);
+				aux.setModal(true);
+				aux.setVisible(true);
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem);

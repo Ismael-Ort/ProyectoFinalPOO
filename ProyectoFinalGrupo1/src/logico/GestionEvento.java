@@ -347,15 +347,60 @@ public class GestionEvento {
 		return recu;
 	}
 
-
-
+////////////////////////////////////////////////////////////////////////
 	public void eliminarTrabajo(TrabajoCientifico trabajo) {
 		// TODO Auto-generated method stub
 		
 	}
 	
+	public int indcomision(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < comisiones.size() && seguir == true)
+		{
+			if(comisiones.get(i).getIdcomision().equalsIgnoreCase(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+	
+	public void modicomision(Comision comision) {
+		int ind = indcomision(comision.getIdcomision());
+		if(ind != -1)
+			comisiones.set(ind, comision);
+	}
 	
 	
+	public void modifevento(Evento evento) {
+		int ind=indevento(evento.getCodigo());
+		if(ind != -1)
+			eventos.set(ind, evento);
+	}
+	
+	public int indevento(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < eventos.size() && seguir == true)
+		{
+			if(eventos.get(i).getCodigo().equalsIgnoreCase(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
 	
 	
 	

@@ -38,7 +38,7 @@ public class Comision {
 	public void setArea(String area) {
 		this.area = area;
 	}
-
+	
 	public Jurado getPresidente() {
 		return presidente;
 	}
@@ -58,6 +58,10 @@ public class Comision {
 	public ArrayList<TrabajoCientifico> getTrabajos() {
 		return trabajos;
 	}
+	
+	public void agregartrabajo(TrabajoCientifico trabajo) {
+		trabajos.add(trabajo);
+	}
 
 	public void setTrabajos(ArrayList<TrabajoCientifico> trabajos) {
 		this.trabajos = trabajos;
@@ -75,5 +79,7 @@ public class Comision {
 		}
 		
 	}
+
+	
 
 }
