@@ -34,4 +34,9 @@ public class Participante extends Persona {
 		trabajos.add(trabajo);
 	}
 
+	public void removertrabajo(TrabajoCientifico trabajo) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

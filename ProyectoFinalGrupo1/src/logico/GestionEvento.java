@@ -346,6 +346,13 @@ public class GestionEvento {
 		
 		return recu;
 	}
+
+
+
+	public void eliminarTrabajo(TrabajoCientifico trabajo) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
