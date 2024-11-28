@@ -34,6 +34,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JFormattedTextField;
 import java.awt.Color;
+import java.awt.SystemColor;
 
 public class RegistrarTrabajo extends JDialog {
 
@@ -76,7 +77,7 @@ public class RegistrarTrabajo extends JDialog {
 		setBounds(100, 100, 493, 468);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(new Color(0, 0, 204));
+		contentPanel.setBackground(SystemColor.activeCaption);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
@@ -130,7 +131,7 @@ public class RegistrarTrabajo extends JDialog {
 		}
 		{
 			JPanel panel = new JPanel();
-			panel.setBackground(new Color(255, 204, 51));
+			panel.setBackground(SystemColor.controlShadow);
 			panel.setBorder(new TitledBorder(null, "Seleccionar:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			panel.setBounds(10, 145, 457, 230);
 			contentPanel.add(panel);
