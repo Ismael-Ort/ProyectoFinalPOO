@@ -77,7 +77,9 @@ public class RegistrarPersona extends JDialog {
 		setTitle("Agregar Participante");
 		modpersona=tipospersona;
 		rdbtnjurado = new JRadioButton("Jurado");
+		rdbtnjurado.setBackground(new Color(255, 204, 51));
 		rdbtnparticipante = new JRadioButton("Participante");
+		rdbtnparticipante.setBackground(new Color(255, 204, 51));
 		if(modpersona!=null && modpersona instanceof Jurado) {
 			setTitle("Modificar jurado: "+((Jurado)tipospersona).getNombre()+" codigo: " +((Jurado)tipospersona).getCodjurado());
 			rdbtnjurado.setSelected(true);
@@ -183,6 +185,7 @@ public class RegistrarPersona extends JDialog {
 		}
 		{
 			JPanel panel = new JPanel();
+			panel.setBackground(new Color(255, 204, 51));
 
 			panel.setBorder(new TitledBorder(null, "Tipo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			panel.setBounds(10, 112, 414, 55);
@@ -298,6 +301,7 @@ public class RegistrarPersona extends JDialog {
 		}
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(255, 204, 51));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{

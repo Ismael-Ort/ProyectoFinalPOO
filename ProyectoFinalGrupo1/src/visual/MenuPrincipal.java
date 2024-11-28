@@ -57,11 +57,23 @@ public class MenuPrincipal extends JFrame {
 		});
 		mnNewMenu.add(mntmNewMenuItem);
 		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Mostrar Participante");
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Mostrar Jurado");
+		mnNewMenu.add(mntmNewMenuItem_3);
+		
 		JMenu mnNewMenu_1 = new JMenu("Trabajo");
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Registrar Trabajo");
 		mnNewMenu_1.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Mostrar Trabajo");
+		mnNewMenu_1.add(mntmNewMenuItem_4);
+		
+		JMenu mnNewMenu_2 = new JMenu("Comisiones");
+		menuBar.add(mnNewMenu_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setContentPane(contentPane);

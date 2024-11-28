@@ -20,6 +20,7 @@ public class GestionEvento {
 	private ArrayList<Evento>eventos;
 	private ArrayList<Recurso>recursos;
 	private ArrayList<Comision>comisiones;
+	private ArrayList<Comision>comisionesaux;
 	private static GestionEvento event = null;
 	
 	private int codjurado;
@@ -102,6 +103,11 @@ public class GestionEvento {
 
 	public void setComisiones(ArrayList<Comision> comisiones) {
 		this.comisiones = comisiones;
+	}
+	
+	public void agregarcomisionesaux(Comision com) {
+		comisionesaux.add(com);
+		codcomision++;
 	}
 
 

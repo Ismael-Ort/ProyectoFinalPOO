@@ -2,6 +2,7 @@ package logico;
 
 import java.util.ArrayList;
 
+import logico.Comision;
 import logico.TrabajoCientifico;
 import logico.Jurado;
 import logico.TrabajoCientifico;
@@ -53,6 +54,10 @@ public class Comision {
 
 	public void setJurados(ArrayList<Jurado> jurados) {
 		this.jurados = jurados;
+	}
+	
+	public void agregarjurados(Jurado j) {
+		jurados.add(j);
 	}
 
 	public ArrayList<TrabajoCientifico> getTrabajos() {
