@@ -91,7 +91,7 @@ public class RegistrarPersona extends JDialog {
 			setTitle("Registro Personas");
 			rdbtnjurado.setSelected(true);
 		}*/
-		setBounds(100, 100, 471, 470);
+		setBounds(100, 100, 456, 470);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(51, 0, 204));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
