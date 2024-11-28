@@ -353,10 +353,40 @@ public class GestionEvento {
 		return recu;
 	}
 
+<<<<<<< HEAD
 ////////////////////////////////////////////////////////////////////////
+=======
+
+
+	
+
+
+
+
+
+	
+	//Funciones de eliminar
+
+
+	
+>>>>>>> branch 'master' of https://github.com/Ismael-Ort/ProyectoFinalPOO.git
 	public void eliminarTrabajo(TrabajoCientifico trabajo) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	
+	public void eliminarparticipante(String codigo) {
+		int ind = indparticipante(codigo);
+		if(ind != -1)
+			personas.remove(ind);
+	}
+	
+	
+	public void eliminarjurado(String codigo) {
+		int ind = indjurado(codigo);
+		if(ind != -1)
+			personas.remove(ind);
 	}
 	
 	public int indcomision(String codigo) {
@@ -408,7 +438,47 @@ public class GestionEvento {
 		return posi;
 	}
 	
+	//Indices
 	
+	public int indparticipante(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < personas.size() && seguir == true)
+		{
+			if(personas.get(i) instanceof Participante && ((Participante)personas.get(i)).getCodparticipante().equals(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+	
+	
+	public int indjurado(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < personas.size() && seguir == true)
+		{
+			if(personas.get(i) instanceof Jurado && ((Jurado)personas.get(i)).getCodjurado().equals(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+
+
+
 	
 	
 	
