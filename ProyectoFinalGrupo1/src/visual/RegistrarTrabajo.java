@@ -33,6 +33,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JFormattedTextField;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class RegistrarTrabajo extends JDialog {
 
@@ -72,14 +74,17 @@ public class RegistrarTrabajo extends JDialog {
 			participantebuscar=participante;
 		}
 		setTitle("Agregar trabajo");
-		setBounds(100, 100, 493, 458);
+		setBounds(100, 100, 493, 468);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(SystemColor.activeCaption);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
 			JLabel lblNewLabel = new JLabel("Cedula propietario:");
+			lblNewLabel.setForeground(new Color(0, 0, 0));
+			lblNewLabel.setBackground(new Color(255, 255, 255));
 			lblNewLabel.setBounds(10, 20, 117, 14);
 			contentPanel.add(lblNewLabel);
 		}
@@ -126,6 +131,7 @@ public class RegistrarTrabajo extends JDialog {
 		}
 		{
 			JPanel panel = new JPanel();
+			panel.setBackground(SystemColor.controlShadow);
 			panel.setBorder(new TitledBorder(null, "Seleccionar:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			panel.setBounds(10, 145, 457, 230);
 			contentPanel.add(panel);
