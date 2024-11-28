@@ -256,7 +256,8 @@ public class RegistrarPersona extends JDialog {
 			}
 			{
 				cmbarea = new JComboBox();
-				cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Física", "Biología", "Química", "Astronomía", "Tecnología","Matemática"}));
+				cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Física", "Biología", 
+						"Química", "Astronomía", "Tecnología","Matemática"}));
 				cmbarea.setBounds(10, 75, 117, 20);
 				panel.add(cmbarea);
 			}
@@ -282,12 +283,12 @@ public class RegistrarPersona extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						int opcion;
 						if(trabajo != null) {
-							opcion= JOptionPane.showConfirmDialog(null, "Estas Seguro de querer eliminar este trabajo?",
+							opcion= JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar este trabajo?",
 									"Confirmacion", JOptionPane.YES_NO_OPTION);
 							if(opcion == JOptionPane.OK_OPTION) {
 								GestionEvento.getInstance().eliminarTrabajo(trabajo);
 								participante.removertrabajo(trabajo);
-								//eliminardelasclases(trabajo);
+								eliminardelasclases(trabajo);
 								mostrartrabajos();
 								btneliminar.setEnabled(false);
 							}
@@ -319,7 +320,7 @@ public class RegistrarPersona extends JDialog {
 								((Jurado) modpersona).setCodjurado(txtcodigo.getText());
 								((Jurado) modpersona).setAreaespecializado(cmbarea.getSelectedItem().toString());
 								//GestionEvento.getInstance().modifJurado((Jurado)modpersona);
-								//MostrarJurados.loadjurados(null);
+								//MostrarJurado.loadjurados(null);
 								dispose();
 							}else if( modpersona instanceof Participante && (((Participante)modpersona).getCodparticipante()).equalsIgnoreCase("buscar")) {
 								modpersona.setCedula(txtcedula.getText());
@@ -337,13 +338,13 @@ public class RegistrarPersona extends JDialog {
 								Jurado persona=new Jurado(txtcedula.getText(),txtnombre.getText() , txttelefono.getText(), txtcodigo.getText(),
 										cmbarea.getSelectedItem().toString());
 								GestionEvento.getInstance().agregarpersonas(persona);
-								JOptionPane.showMessageDialog(null, "Jurado registrado correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+								JOptionPane.showMessageDialog(null, "JURADO REGISTRADO", "Aviso", JOptionPane.INFORMATION_MESSAGE);
 								clean();
 							}else if (rdbtnparticipante.isSelected() && participante!=null) {
 								Participante persona=new Participante(txtcedula.getText(), txtnombre.getText(), txttelefono.getText(), txtcodigo.getText());
 								agregartrabajos(persona);
 								GestionEvento.getInstance().agregarpersonas(persona);
-								JOptionPane.showMessageDialog(null, "Participante registrado correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+								JOptionPane.showMessageDialog(null, "PARTICIPANTE REGISTRADO", "Aviso", JOptionPane.INFORMATION_MESSAGE);
 								clean();
 							}else {
 								JOptionPane.showMessageDialog(null, "Ingrese almenos 1 trabajo al participante", "Aviso", JOptionPane.INFORMATION_MESSAGE);

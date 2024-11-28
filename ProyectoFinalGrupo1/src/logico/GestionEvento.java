@@ -353,26 +353,9 @@ public class GestionEvento {
 		return recu;
 	}
 
-<<<<<<< HEAD
-////////////////////////////////////////////////////////////////////////
-=======
 
-
-	
-
-
-
-
-
-	
-	//Funciones de eliminar
-
-
-	
->>>>>>> branch 'master' of https://github.com/Ismael-Ort/ProyectoFinalPOO.git
 	public void eliminarTrabajo(TrabajoCientifico trabajo) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	
