@@ -109,6 +109,10 @@ public class GestionEvento {
 		comisionesaux.add(com);
 		codcomision++;
 	}
+	
+	public ArrayList<Comision> getcomisionesaux() {
+		return comisionesaux;
+	}
 
 
 	public static GestionEvento getEvent() {

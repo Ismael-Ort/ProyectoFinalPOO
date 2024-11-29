@@ -15,7 +15,7 @@ public class Comision {
 	private ArrayList<Jurado>jurados;
 	private ArrayList<TrabajoCientifico>trabajos;
 	
-	public Comision(String codigo, String area, Jurado presidente) {
+	public Comision(String idcomision, String area, Jurado presidente) {
 		super();
 		this.idcomision = idcomision;
 		this.area = area;

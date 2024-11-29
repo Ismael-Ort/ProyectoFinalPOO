@@ -25,12 +25,11 @@ public class Recurso {
 		this.codigo = codigo;
 	}
 
-	public boolean isDisponible() {
+	public boolean getdisponible() {
 		return disponible;
 	}
-
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
+	public void setdisponible(boolean estado) {
+		this.disponible = estado;
 	}
 
 	public String getUbicacion() {

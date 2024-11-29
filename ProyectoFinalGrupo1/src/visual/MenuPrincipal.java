@@ -3,6 +3,7 @@ package visual;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -116,6 +117,13 @@ public class MenuPrincipal extends JFrame {
 		menuBar.add(mnNewMenu_3);
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Crear Evento");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RegistrarEvento aux = new RegistrarEvento();
+				aux.setModal(true);
+				aux.setVisible(true);
+			}
+		});
 		mnNewMenu_3.add(mntmNewMenuItem_6);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Mostrar Eventos");
