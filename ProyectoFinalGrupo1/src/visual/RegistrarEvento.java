@@ -36,6 +36,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.border.BevelBorder;
 import java.awt.SystemColor;
+import javax.swing.border.TitledBorder;
 
 public class RegistrarEvento extends JDialog {
 
@@ -310,7 +311,7 @@ public class RegistrarEvento extends JDialog {
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBackground(SystemColor.controlShadow);
-			buttonPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
