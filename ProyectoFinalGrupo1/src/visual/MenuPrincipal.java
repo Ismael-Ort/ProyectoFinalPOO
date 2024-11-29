@@ -146,6 +146,15 @@ public class MenuPrincipal extends JFrame {
 		menuBar.add(mnNewMenu_4);
 		
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("A\u00F1adir Recursos");
+		mntmNewMenuItem_8.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				RegistrarRecurso aux= new RegistrarRecurso();
+				aux.setModal(true);
+				aux.setVisible(true);
+			
+			}
+		});
 		mnNewMenu_4.add(mntmNewMenuItem_8);
 		
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Mostrar Recurso");
