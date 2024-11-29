@@ -20,6 +20,7 @@ public class GestionEvento {
 	private ArrayList<Evento>eventos;
 	private ArrayList<Recurso>recursos;
 	private ArrayList<Comision>comisiones;
+	private ArrayList<Comision>comisionesaux;
 	private static GestionEvento event = null;
 	
 	private int codjurado;
@@ -102,6 +103,15 @@ public class GestionEvento {
 
 	public void setComisiones(ArrayList<Comision> comisiones) {
 		this.comisiones = comisiones;
+	}
+	
+	public void agregarcomisionesaux(Comision com) {
+		comisionesaux.add(com);
+		codcomision++;
+	}
+	
+	public ArrayList<Comision> getcomisionesaux() {
+		return comisionesaux;
 	}
 
 
@@ -348,16 +358,114 @@ public class GestionEvento {
 	}
 
 
-
 	public void eliminarTrabajo(TrabajoCientifico trabajo) {
 		// TODO Auto-generated method stub
-		
+	}
+
+	
+	public void eliminarparticipante(String codigo) {
+		int ind = indparticipante(codigo);
+		if(ind != -1)
+			personas.remove(ind);
 	}
 	
 	
+	public void eliminarjurado(String codigo) {
+		int ind = indjurado(codigo);
+		if(ind != -1)
+			personas.remove(ind);
+	}
+	
+	public int indcomision(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < comisiones.size() && seguir == true)
+		{
+			if(comisiones.get(i).getIdcomision().equalsIgnoreCase(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+	
+	public void modicomision(Comision comision) {
+		int ind = indcomision(comision.getIdcomision());
+		if(ind != -1)
+			comisiones.set(ind, comision);
+	}
 	
 	
+	public void modifevento(Evento evento) {
+		int ind=indevento(evento.getCodigo());
+		if(ind != -1)
+			eventos.set(ind, evento);
+	}
 	
+	public int indevento(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < eventos.size() && seguir == true)
+		{
+			if(eventos.get(i).getCodigo().equalsIgnoreCase(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+	
+	//Indices
+	
+	public int indparticipante(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < personas.size() && seguir == true)
+		{
+			if(personas.get(i) instanceof Participante && ((Participante)personas.get(i)).getCodparticipante().equals(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+	
+	
+	public int indjurado(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < personas.size() && seguir == true)
+		{
+			if(personas.get(i) instanceof Jurado && ((Jurado)personas.get(i)).getCodjurado().equals(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+
+
+
 	
 	
 	
