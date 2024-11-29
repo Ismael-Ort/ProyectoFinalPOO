@@ -29,6 +29,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
+import java.awt.SystemColor;
 
 public class RegistrarComision extends JDialog {
 
@@ -66,6 +67,7 @@ public class RegistrarComision extends JDialog {
 		setTitle("Agregar Comision");
 		setBounds(100, 100, 544, 458);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(SystemColor.controlShadow);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setLocationRelativeTo(null);
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -99,6 +101,7 @@ public class RegistrarComision extends JDialog {
 		contentPanel.add(cmbarea);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(SystemColor.activeCaption);
 		panel.setBorder(new TitledBorder(null, "Jurados:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.setBounds(10, 126, 505, 252);
 		contentPanel.add(panel);
