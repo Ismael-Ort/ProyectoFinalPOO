@@ -16,6 +16,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.SoftBevelBorder;
@@ -25,6 +26,7 @@ public class MostrarTrabajo extends JDialog {
 
     private final JPanel contentPanel = new JPanel();
     private JTable table;
+    
 
     private static Object[] rows;
     private static DefaultTableModel model;
