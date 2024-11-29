@@ -38,6 +38,7 @@ public class GestionEvento {
 		this.recursos = new ArrayList<>();
 		this.comisiones=new ArrayList<>();
 		this.eventos = new ArrayList<>();
+		this.comisionesaux = new ArrayList<>();
 		codjurado = 1;
 		codparticipante = 1;
 		codtrabajo = 1;
