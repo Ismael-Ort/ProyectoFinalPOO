@@ -119,7 +119,9 @@ public class MenuPrincipal extends JFrame {
 		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Registrar");
 		mntmNewMenuItem_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				RegistrarComision aux = new RegistrarComision();
+				aux.setModal(true);
+				aux.setVisible(true);
 			}
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_5);

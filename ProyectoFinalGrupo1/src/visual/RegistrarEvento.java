@@ -168,14 +168,15 @@ public class RegistrarEvento extends JDialog {
 		txtUbicacion.setColumns(10);
 		
 		spnFechaInicio = new JSpinner();
-		spnFechaInicio.setModel(new SpinnerDateModel(new Date(1669089600000L), null, null, Calendar.DAY_OF_YEAR));
+		spnFechaInicio.setModel(new SpinnerDateModel(new Date(), null, null, Calendar.DAY_OF_YEAR));
 		spnFechaInicio.setBounds(106, 95, 140, 22);
 		panel.add(spnFechaInicio);
-		
+
 		spnFechaFin = new JSpinner();
-		spnFechaFin.setModel(new SpinnerDateModel(new Date(1669089600000L), null, null, Calendar.DAY_OF_YEAR));
+		spnFechaFin.setModel(new SpinnerDateModel(new Date(), null, null, Calendar.DAY_OF_YEAR));
 		spnFechaFin.setBounds(414, 95, 140, 22);
 		panel.add(spnFechaFin);
+
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(SystemColor.activeCaption);
@@ -215,7 +216,6 @@ public class RegistrarEvento extends JDialog {
 		panel_1.add(scrollPane_1);
 		
 		model2 = new DefaultTableModel();
-		//String[] columnas1 = {"Código","Tipo"};
 		model2.setColumnIdentifiers(columnas);
 		tableagregados = new JTable();
 		tableagregados.addMouseListener(new MouseAdapter() {
