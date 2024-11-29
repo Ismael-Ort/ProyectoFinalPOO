@@ -54,7 +54,7 @@ public class RegistrarComision extends JDialog {
 			RegistrarComision dialog = new RegistrarComision();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
-		} catch (Exception e) {
+		} catch (Exception e) { 
 			e.printStackTrace();
 		}
 	}
@@ -64,7 +64,7 @@ public class RegistrarComision extends JDialog {
 	 */
 	public RegistrarComision() {
 
-		setTitle("Agregar Comision");
+		setTitle("Registrar Comision");
 		setBounds(100, 100, 544, 458);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(SystemColor.controlShadow);
@@ -77,7 +77,7 @@ public class RegistrarComision extends JDialog {
 		lblNewLabel.setBounds(64, 30, 52, 14);
 		contentPanel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Area de trabajo:");
+		JLabel lblNewLabel_1 = new JLabel("Área de trabajo:");
 		lblNewLabel_1.setBounds(19, 75, 97, 14);
 		contentPanel.add(lblNewLabel_1);
 		
@@ -108,6 +108,7 @@ public class RegistrarComision extends JDialog {
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(SystemColor.activeCaption);
 		panel_1.setBorder(new TitledBorder(null, "Jurados disponibles:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBounds(10, 38, 210, 172);
 		panel.add(panel_1);
@@ -141,6 +142,7 @@ public class RegistrarComision extends JDialog {
 		scrollPane.setViewportView(tableselect);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(SystemColor.activeCaption);
 		panel_2.setBorder(new TitledBorder(null, "Jurados generados:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_2.setBounds(285, 38, 210, 172);
 		panel.add(panel_2);
@@ -230,34 +232,89 @@ public class RegistrarComision extends JDialog {
 		panel.add(btneliminar);
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(SystemColor.controlShadow);
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton btnagregar = new JButton("Agregar");
 				btnagregar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						Comision comision=null;
-						if(presidenteJurado!=null) {
-							comision = new Comision(txtcodigo.getText(), cmbarea.getSelectedItem().toString(), presidenteJurado);
-							for (int i = 0; i < modeltableadd.getRowCount(); i++) {
-								Jurado juradoaux=null;
-								juradoaux = GestionEvento.getInstance().buscarJurado(modeltableadd.getValueAt(i, 0).toString());
-								if(juradoaux!=null && juradoaux!=presidenteJurado) {
-									comision.agregarjurados(juradoaux);
-								}
-							}
-							if(comision.getJurados().size()!=0) {
-								GestionEvento.getInstance().agregarcomisionesaux(comision);
-								JOptionPane.showMessageDialog(null, "Comision registrada correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-								clean();
-								presidenteJurado=null;
-							}else {
-								JOptionPane.showMessageDialog(null, "Ingrese mas de un jurado para cada comision", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-							}
-							//System.out.println(EventoCiencia.getInstance().getcomisionesaux().get(0).getPresidente().getNombre());
-						}else {
-							JOptionPane.showMessageDialog(null, "No se puede crear una comision sin almenos un presidente", "Error", JOptionPane.INFORMATION_MESSAGE);
-						}
+						try {
+				            // Validar que el presidente del jurado esté asignado
+				            if (presidenteJurado == null) {
+				                JOptionPane.showMessageDialog(null, 
+				                    "No se puede crear una comisión sin al menos un presidente", 
+				                    "Error", 
+				                    JOptionPane.ERROR_MESSAGE);
+				                return;
+				            }
+
+				            // Validar que los campos obligatorios no estén vacíos
+				            if (txtcodigo.getText().trim().isEmpty() || cmbarea.getSelectedItem() == null) {
+				                JOptionPane.showMessageDialog(null, 
+				                    "Debe llenar todos los campos obligatorios", 
+				                    "Error", 
+				                    JOptionPane.ERROR_MESSAGE);
+				                return;
+				            }
+
+				            // Crear la comisión
+				            Comision comision = new Comision(txtcodigo.getText().trim(), 
+				                                             cmbarea.getSelectedItem().toString(), 
+				                                             presidenteJurado);
+
+				            // Verificar si hay jurados en la tabla y agregarlos
+				            if (modeltableadd.getRowCount() == 0) {
+				                JOptionPane.showMessageDialog(null, 
+				                    "Debe agregar al menos un jurado a la comisión", 
+				                    "Error", 
+				                    JOptionPane.ERROR_MESSAGE);
+				                return;
+				            }
+
+				            for (int i = 0; i < modeltableadd.getRowCount(); i++) {
+				                String codigoJurado = modeltableadd.getValueAt(i, 0).toString();
+				                Jurado juradoaux = GestionEvento.getInstance().buscarJurado(codigoJurado);
+				                if (juradoaux != null && juradoaux != presidenteJurado) {
+				                    comision.agregarjurados(juradoaux);
+				                }
+				            }
+
+				            // Validar que la comisión tenga al menos un jurado además del presidente
+				            if (comision.getJurados().size() == 0) {
+				                JOptionPane.showMessageDialog(null, 
+				                    "Ingrese más de un jurado para cada comisión", 
+				                    "Aviso", 
+				                    JOptionPane.INFORMATION_MESSAGE);
+				                return;
+				            }
+
+				            // Registrar la comisión
+				            GestionEvento.getInstance().agregarcomisionesaux(comision);
+
+				            // Verificar si se agregó correctamente
+				            if (GestionEvento.getInstance().getcomisionesaux().contains(comision)) {
+				                JOptionPane.showMessageDialog(null, 
+				                    "Comisión registrada correctamente", 
+				                    "Aviso", 
+				                    JOptionPane.INFORMATION_MESSAGE);
+				            } else {
+				                JOptionPane.showMessageDialog(null, 
+				                    "Hubo un error al registrar la comisión", 
+				                    "Error", 
+				                    JOptionPane.ERROR_MESSAGE);
+				                return;
+				            }
+				            clean();
+				            presidenteJurado = null;
+
+				        } catch (Exception ex) {
+				            JOptionPane.showMessageDialog(null, 
+				                "Ocurrió un error: " + ex.getMessage(), 
+				                "Error", 
+				                JOptionPane.ERROR_MESSAGE);
+				            ex.printStackTrace(); 
+				        }
 					}
 				});
 				btnagregar.setActionCommand("OK");
