@@ -26,6 +26,8 @@ public class MostrarTrabajo extends JDialog {
 
     private final JPanel contentPanel = new JPanel();
     private JTable table;
+    private TrabajoCientifico trabajocientifico;
+
     
 
     private static Object[] rows;
@@ -37,7 +39,7 @@ public class MostrarTrabajo extends JDialog {
      */
     public static void main(String[] args) {
         try {
-            MostrarTrabajo dialog = new MostrarTrabajo();
+            MostrarTrabajo dialog = new MostrarTrabajo(null);
             dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
             dialog.setVisible(true);
         } catch (Exception e) {
@@ -48,7 +50,7 @@ public class MostrarTrabajo extends JDialog {
     /**
      * Create the dialog.
      */
-    public MostrarTrabajo() {
+    public MostrarTrabajo(ArrayList<TrabajoCientifico> prioridad) {
         setTitle("Trabajos");
         setBounds(100, 100, 705, 341);
         getContentPane().setLayout(new BorderLayout());
@@ -91,10 +93,10 @@ public class MostrarTrabajo extends JDialog {
                 buttonPane.add(btnCerrar);
             }
         }
-        cargardatos();
+        cargardatos(prioridad);
     }
 
-    public void cargardatos() {
+    public void cargardatos(ArrayList<TrabajoCientifico> prioridad) {
         model.setRowCount(0);
         rows = new Object[model.getColumnCount()];
 

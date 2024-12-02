@@ -19,6 +19,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class MostrarComision extends JDialog {
 
@@ -50,6 +52,9 @@ public class MostrarComision extends JDialog {
 	 * Create the dialog.
 	 */
 	public MostrarComision(ArrayList<Comision> prioridad) {
+		addComponentListener(new ComponentAdapter() {
+			
+		});
 		setTitle("Comisiones");
 		setBounds(100, 100, 691, 373);
 		getContentPane().setLayout(new BorderLayout());

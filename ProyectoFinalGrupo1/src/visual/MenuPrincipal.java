@@ -106,7 +106,7 @@ public class MenuPrincipal extends JFrame {
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Mostrar Trabajo");
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MostrarTrabajo aux = new MostrarTrabajo();
+				MostrarTrabajo aux = new MostrarTrabajo(null);
 				aux.setModal(true);
 				aux.setVisible(true);
 			}
