@@ -491,9 +491,5 @@ public class GestionEvento {
 		return posi;
 	}
 
-
-
-	
-	
 	
 }
