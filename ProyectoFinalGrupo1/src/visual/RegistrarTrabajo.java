@@ -89,20 +89,20 @@ public class RegistrarTrabajo extends JDialog {
 		}
 		{
 			JLabel lblNewLabel_1 = new JLabel("Codigo del trabajo:");
-			lblNewLabel_1.setBounds(22, 364, 117, 14);
+			lblNewLabel_1.setBounds(22, 354, 117, 14);
 			contentPanel.add(lblNewLabel_1);
 		}
 		{
 			txtcodigo = new JTextField();
 			txtcodigo.setEditable(false);
 			txtcodigo.setText("T-"+GestionEvento.getInstance().getCodtrabajo());
-			txtcodigo.setBounds(136, 362, 108, 20);
+			txtcodigo.setBounds(136, 352, 108, 20);
 			contentPanel.add(txtcodigo);
 			txtcodigo.setColumns(10);
 		}
 		{
 			JLabel lblNewLabel_2 = new JLabel("Area Trabajo:");
-			lblNewLabel_2.setBounds(256, 367, 86, 14);
+			lblNewLabel_2.setBounds(256, 357, 86, 14);
 			contentPanel.add(lblNewLabel_2);
 		}
 		{
@@ -113,18 +113,20 @@ public class RegistrarTrabajo extends JDialog {
 					modeltableevento.setRowCount(0);
 				}
 			});
+
 			cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Qu\u00EDmica cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
 			cmbarea.setBounds(344, 364, 109, 20);
+
 			contentPanel.add(cmbarea);
 		}
 		{
 			JLabel lblNewLabel_3 = new JLabel("Titulo del proyecto:");
-			lblNewLabel_3.setBounds(22, 325, 117, 14);
+			lblNewLabel_3.setBounds(22, 313, 117, 14);
 			contentPanel.add(lblNewLabel_3);
 		}
 		{
 			txttitulo = new JTextField();
-			txttitulo.setBounds(136, 322, 317, 20);
+			txttitulo.setBounds(136, 310, 317, 20);
 			contentPanel.add(txttitulo);
 			txttitulo.setColumns(10);
 		}

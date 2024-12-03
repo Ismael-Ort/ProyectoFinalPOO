@@ -1,8 +1,12 @@
 package logico;
 
 import logico.Participante;
+import java.io.Serializable;
 
-public class TrabajoCientifico {
+public class TrabajoCientifico implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	private String codigo;
 	private Participante propietario;
 	private float calificacion;

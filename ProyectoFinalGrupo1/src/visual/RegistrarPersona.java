@@ -75,6 +75,7 @@ public class RegistrarPersona extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistrarPersona(Persona tipospersona) {
+		
 		setTitle("Agregar Participante");
 		modpersona=tipospersona;
 		rdbtnjurado = new JRadioButton("Jurado");
