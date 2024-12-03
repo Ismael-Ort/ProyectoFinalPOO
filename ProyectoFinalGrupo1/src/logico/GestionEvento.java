@@ -358,7 +358,33 @@ public class GestionEvento {
 		return recu;
 	}
 
-
+        // funciones para eliminar
+	
+	public void eliminarRecurso(String codigo) {
+		int ind = indRecurso(codigo);
+		
+		if(ind != -1)
+			recursos.remove(ind);
+	}
+	
+	public int indRecurso(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < recursos.size() && seguir == true)
+		{
+			if(recursos.get(i).getCodigo().equals(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
+	}
+	
 	public void eliminarTrabajo(TrabajoCientifico trabajo) {
 		// TODO Auto-generated method stub
 	}
