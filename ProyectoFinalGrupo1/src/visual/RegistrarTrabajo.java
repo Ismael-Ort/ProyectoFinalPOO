@@ -58,7 +58,6 @@ public class RegistrarTrabajo extends JDialog {
 	
 	public static Participante participantebuscar=null;
 	
-	//private Participante participantetrabajo;
 	private static JFormattedTextField txtcedula;
 	private static JButton btnBuscar;
 	
