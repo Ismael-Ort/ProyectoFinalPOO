@@ -103,7 +103,7 @@ public class MostrarParticipante extends JDialog {
 			btnmodificar.setEnabled(false);
 			buttonPane.add(btnmodificar);
 			
-			btnproyecto = new JButton("Proyectos");
+			btnproyecto = new JButton("Trabajos");
 			btnproyecto.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 				}

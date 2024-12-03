@@ -1,6 +1,7 @@
 package logico;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 import logico.Jurado;
 import logico.Participante;
@@ -13,7 +14,9 @@ import logico.Recurso;
 import logico.TrabajoCientifico;
 
 
-public class GestionEvento {
+public class GestionEvento implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private ArrayList<Persona>personas;
 	private ArrayList<TrabajoCientifico>trabajos;

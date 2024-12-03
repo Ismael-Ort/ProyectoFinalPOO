@@ -1,13 +1,16 @@
 package logico;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 import logico.Comision;
 import logico.TrabajoCientifico;
 import logico.Jurado;
 import logico.TrabajoCientifico;
 
-public class Comision {
+public class Comision implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String idcomision;
 	private String area;
