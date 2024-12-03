@@ -52,10 +52,8 @@ public class MostrarComision extends JDialog {
 	 * Create the dialog.
 	 */
 	public MostrarComision(ArrayList<Comision> prioridad) {
-		addComponentListener(new ComponentAdapter() {
-			
-		});
-		setTitle("Comisiones");
+	
+	    setTitle("Comisiones");
 		setBounds(100, 100, 691, 373);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
