@@ -74,7 +74,7 @@ public class RegistrarTrabajo extends JDialog {
 			participantebuscar=participante;
 		}
 		setTitle("Agregar trabajo");
-		setBounds(100, 100, 493, 468);
+		setBounds(100, 100, 506, 461);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(SystemColor.activeCaption);
@@ -90,20 +90,20 @@ public class RegistrarTrabajo extends JDialog {
 		}
 		{
 			JLabel lblNewLabel_1 = new JLabel("Codigo del trabajo:");
-			lblNewLabel_1.setBounds(10, 98, 117, 14);
+			lblNewLabel_1.setBounds(22, 364, 117, 14);
 			contentPanel.add(lblNewLabel_1);
 		}
 		{
 			txtcodigo = new JTextField();
 			txtcodigo.setEditable(false);
 			txtcodigo.setText("T-"+GestionEvento.getInstance().getCodtrabajo());
-			txtcodigo.setBounds(124, 96, 108, 20);
+			txtcodigo.setBounds(136, 362, 108, 20);
 			contentPanel.add(txtcodigo);
 			txtcodigo.setColumns(10);
 		}
 		{
 			JLabel lblNewLabel_2 = new JLabel("Area Trabajo:");
-			lblNewLabel_2.setBounds(244, 101, 86, 14);
+			lblNewLabel_2.setBounds(256, 367, 86, 14);
 			contentPanel.add(lblNewLabel_2);
 		}
 		{
@@ -115,17 +115,17 @@ public class RegistrarTrabajo extends JDialog {
 				}
 			});
 			cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Física", "Biología", "Química", "Astronomía", "Tecnología","Matemática"}));
-			cmbarea.setBounds(332, 98, 109, 20);
+			cmbarea.setBounds(344, 364, 109, 20);
 			contentPanel.add(cmbarea);
 		}
 		{
 			JLabel lblNewLabel_3 = new JLabel("Titulo del proyecto:");
-			lblNewLabel_3.setBounds(10, 60, 117, 14);
+			lblNewLabel_3.setBounds(22, 325, 117, 14);
 			contentPanel.add(lblNewLabel_3);
 		}
 		{
 			txttitulo = new JTextField();
-			txttitulo.setBounds(124, 57, 317, 20);
+			txttitulo.setBounds(136, 322, 317, 20);
 			contentPanel.add(txttitulo);
 			txttitulo.setColumns(10);
 		}
@@ -133,7 +133,7 @@ public class RegistrarTrabajo extends JDialog {
 			JPanel panel = new JPanel();
 			panel.setBackground(SystemColor.controlShadow);
 			panel.setBorder(new TitledBorder(null, "Seleccionar:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel.setBounds(10, 145, 457, 230);
+			panel.setBounds(10, 67, 457, 230);
 			contentPanel.add(panel);
 			panel.setLayout(null);
 			{

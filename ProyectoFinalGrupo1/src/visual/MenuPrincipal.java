@@ -126,6 +126,16 @@ public class MenuPrincipal extends JFrame {
 		});
 		mnNewMenu_2.add(mntmNewMenuItem_5);
 		
+		JMenuItem mntmNewMenuItem_11 = new JMenuItem("Mostrar Comsiones");
+		mntmNewMenuItem_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarComision aux = new MostrarComision(null);
+				aux.setModal(true);
+				aux.setVisible(true);
+			}
+		});
+		mnNewMenu_2.add(mntmNewMenuItem_11);
+		
 		JMenu mnNewMenu_3 = new JMenu("Eventos");
 		menuBar.add(mnNewMenu_3);
 		
@@ -140,6 +150,13 @@ public class MenuPrincipal extends JFrame {
 		mnNewMenu_3.add(mntmNewMenuItem_6);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Mostrar Eventos");
+		mntmNewMenuItem_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarEvento aux = new MostrarEvento();
+				aux.setModal(true);
+				aux.setVisible(true);
+			}
+		});
 		mnNewMenu_3.add(mntmNewMenuItem_7);
 		
 		JMenu mnNewMenu_4 = new JMenu("Recursos");
@@ -171,5 +188,4 @@ public class MenuPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 	}
-
 }
