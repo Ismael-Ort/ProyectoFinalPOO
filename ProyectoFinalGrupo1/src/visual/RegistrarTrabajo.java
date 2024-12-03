@@ -114,7 +114,7 @@ public class RegistrarTrabajo extends JDialog {
 					modeltableevento.setRowCount(0);
 				}
 			});
-			cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Física", "Biología", "Química", "Astronomía", "Tecnología","Matemática"}));
+			cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Qu\u00EDmica cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
 			cmbarea.setBounds(344, 364, 109, 20);
 			contentPanel.add(cmbarea);
 		}

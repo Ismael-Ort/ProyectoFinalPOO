@@ -99,7 +99,7 @@ public class RegistrarPersona extends JDialog {
 			setTitle("Registro Personas");
 			rdbtnjurado.setSelected(true);
 		}
-		setBounds(100, 100, 481, 492);
+		setBounds(100, 100, 448, 492);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(SystemColor.controlShadow);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -256,8 +256,7 @@ public class RegistrarPersona extends JDialog {
 			}
 			{
 				cmbarea = new JComboBox();
-				cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Física", "Biología", 
-						"Química", "Astronomía", "Tecnología","Matemática"}));
+				cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Qu\u00EDmica cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
 				cmbarea.setBounds(10, 75, 117, 20);
 				panel.add(cmbarea);
 			}
