@@ -114,8 +114,8 @@ public class RegistrarTrabajo extends JDialog {
 				}
 			});
 
-			cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Qu\u00EDmica cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
-			cmbarea.setBounds(344, 364, 109, 20);
+			cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Física cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
+			cmbarea.setBounds(344, 351, 109, 20);
 
 			contentPanel.add(cmbarea);
 		}
@@ -208,6 +208,16 @@ public class RegistrarTrabajo extends JDialog {
 				btnaddcomision.setEnabled(false);
 				btnaddcomision.setBounds(10, 196, 157, 23);
 				panel.add(btnaddcomision);
+			}
+			{
+				JButton btnRefrescar = new JButton("Refrescar");
+				btnRefrescar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						loadtableevent();
+					}
+				});
+				btnRefrescar.setBounds(301, 196, 89, 23);
+				panel.add(btnRefrescar);
 			}
 		}
 		{

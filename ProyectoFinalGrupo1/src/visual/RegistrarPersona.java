@@ -257,7 +257,7 @@ public class RegistrarPersona extends JDialog {
 			}
 			{
 				cmbarea = new JComboBox();
-				cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Qu\u00EDmica cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
+				cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Física cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
 				cmbarea.setBounds(10, 75, 117, 20);
 				panel.add(cmbarea);
 			}

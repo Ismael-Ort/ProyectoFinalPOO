@@ -96,7 +96,7 @@ public class RegistrarComision extends JDialog {
 				txtpresidente.setText("");
 			}
 		});
-		cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Física", "Biología", "Química", "Astronomía", "Tecnología","Matemática"}));
+		cmbarea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Mec\u00E1nica Newtoniana", "Biolog\u00EDa avanzada", "Física cu\u00E1ntica", "Ingenier\u00EDa Industrial", "Ingenier\u00EDa Telem\u00E1tica", "Algebra Lineal"}));
 		cmbarea.setBounds(116, 72, 125, 20);
 		contentPanel.add(cmbarea);
 		

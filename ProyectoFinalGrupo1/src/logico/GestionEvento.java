@@ -1,6 +1,7 @@
 package logico;
 
 import java.util.ArrayList;
+
 import java.io.Serializable;
 
 import logico.Jurado;
@@ -205,6 +206,7 @@ public class GestionEvento implements Serializable{
 		trabajos.add(trabajo);
 		codtrabajo++;
 	}
+	
 	
 	
 	public void agregarevento(Evento evento) {
