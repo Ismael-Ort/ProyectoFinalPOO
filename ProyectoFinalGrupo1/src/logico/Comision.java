@@ -26,7 +26,11 @@ public class Comision implements Serializable{
 		this.jurados = new ArrayList<>();
 		this.trabajos = new ArrayList<>();
 	}
-
+	
+	public void agregartrabajo(TrabajoCientifico trabajo) {
+		trabajos.add(trabajo);
+	}
+	
 	public String getIdcomision() {
 		return idcomision;
 	}
@@ -67,9 +71,6 @@ public class Comision implements Serializable{
 		return trabajos;
 	}
 	
-	public void agregartrabajo(TrabajoCientifico trabajo) {
-		trabajos.add(trabajo);
-	}
 
 	public void setTrabajos(ArrayList<TrabajoCientifico> trabajos) {
 		this.trabajos = trabajos;

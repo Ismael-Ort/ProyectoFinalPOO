@@ -209,16 +209,6 @@ public class RegistrarTrabajo extends JDialog {
 				btnaddcomision.setBounds(10, 196, 157, 23);
 				panel.add(btnaddcomision);
 			}
-			{
-				JButton btnRefrescar = new JButton("Refrescar");
-				btnRefrescar.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						loadtableevent();
-					}
-				});
-				btnRefrescar.setBounds(301, 196, 89, 23);
-				panel.add(btnRefrescar);
-			}
 		}
 		{
 /////////////////////////////////////////////////////////////////////////////////////////////////////	
