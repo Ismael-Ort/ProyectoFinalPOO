@@ -277,7 +277,7 @@ public class RegistrarTrabajo extends JDialog {
 										trabajo=new TrabajoCientifico(txtcodigo.getText(), participanteaux, txttitulo.getText());
 										participanteaux.agregartrabajo(trabajo);
 									}
-									comiselected.agregartrabajo(trabajo);
+									comiselected.agregartrabajos(trabajo);
 									GestionEvento.getInstance().modicomision(comiselected);
 									GestionEvento.getInstance().modifevento(eventoselected);
 									GestionEvento.getInstance().agregartrabajo(trabajo);

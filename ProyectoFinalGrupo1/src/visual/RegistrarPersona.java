@@ -291,6 +291,7 @@ public class RegistrarPersona extends JDialog {
 								eliminardelasclases(trabajo);
 								mostrartrabajos();
 								btneliminar.setEnabled(false);
+								GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 							}
 						}
 					}
@@ -320,9 +321,6 @@ public class RegistrarPersona extends JDialog {
 								((Jurado) modpersona).setCodjurado(txtcodigo.getText());
 								((Jurado) modpersona).setAreaespecializado(cmbarea.getSelectedItem().toString());
 
-								//GestionEvento.getInstance().modifJurado((Jurado)modpersona);
-								//MostrarJurado.loadjurados(null);
-
 								dispose();
 							}else if( modpersona instanceof Participante && (((Participante)modpersona).getCodparticipante()).equalsIgnoreCase("buscar")) {
 								modpersona.setCedula(txtcedula.getText());
@@ -340,12 +338,14 @@ public class RegistrarPersona extends JDialog {
 								Jurado persona=new Jurado(txtcedula.getText(),txtnombre.getText() , txttelefono.getText(), txtcodigo.getText(),
 										cmbarea.getSelectedItem().toString());
 								GestionEvento.getInstance().agregarpersonas(persona);
+								GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 								JOptionPane.showMessageDialog(null, "JURADO REGISTRADO", "Aviso", JOptionPane.INFORMATION_MESSAGE);
 								clean();
 							}else if (rdbtnparticipante.isSelected() && participante!=null) {
 								Participante persona=new Participante(txtcedula.getText(), txtnombre.getText(), txttelefono.getText(), txtcodigo.getText());
 								agregartrabajos(persona);
 								GestionEvento.getInstance().agregarpersonas(persona);
+								GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 								JOptionPane.showMessageDialog(null, "PARTICIPANTE REGISTRADO", "Aviso", JOptionPane.INFORMATION_MESSAGE);
 								clean();
 							}else {

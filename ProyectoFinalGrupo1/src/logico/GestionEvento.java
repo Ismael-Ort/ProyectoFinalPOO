@@ -1,7 +1,11 @@
 package logico;
 
 import java.util.ArrayList;
-
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 import logico.Jurado;
@@ -207,7 +211,15 @@ public class GestionEvento implements Serializable{
 		codtrabajo++;
 	}
 	
-	
+	public void agregartrabajo(String cod,String titulo, String codparticipante, Comision comi){
+		Participante parti = buscaparticipante(codparticipante);
+		
+		TrabajoCientifico trabajo = new TrabajoCientifico(cod, parti, titulo);
+		
+		agregartrabajo(trabajo);
+		comi.agregartrabajos(trabajo);
+		parti.agregartrabajo(trabajo);
+	}
 	
 	public void agregarevento(Evento evento) {
 		eventos.add(evento);
@@ -392,7 +404,28 @@ public class GestionEvento implements Serializable{
 	}
 	
 	public void eliminarTrabajo(TrabajoCientifico trabajo) {
-		// TODO Auto-generated method stub
+		int ind = indTrabajo(trabajo.getCodigo());
+		
+		if(ind != -1)
+			trabajos.remove(ind);
+	}
+	
+	public int indTrabajo(String codigo) {
+		int posi = -1;
+		int i = 0;
+		boolean seguir = true;
+		
+		while(i < trabajos.size() && seguir == true)
+		{
+			if(trabajos.get(i).getCodigo().equals(codigo))
+			{
+				posi = i;
+				seguir = false;
+			}	
+			i++;
+		}
+		
+		return posi;
 	}
 
 	
@@ -497,6 +530,30 @@ public class GestionEvento implements Serializable{
 		
 		return posi;
 	}
+	
+	//Ficheros
+	public void guardarDatos(String archivo) {
+        try (FileOutputStream fos = new FileOutputStream(archivo);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(this); 
+            System.out.println("DATOS GUARDADOS");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("ERROR AL GUARDAR LOS DATOS" + e.getMessage());
+        }
+    }
+
+    
+    public static void cargarDatos(String archivo) {
+        try (FileInputStream fis = new FileInputStream(archivo);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            event = (GestionEvento) ois.readObject(); 
+            System.out.println("DATOS CARGADOS DE: "+ archivo);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            System.err.println("ERROR AL CARGAR LOS DATOS" + e.getMessage());
+        }
+    }
 
 	
 }

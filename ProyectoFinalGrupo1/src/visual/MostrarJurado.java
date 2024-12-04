@@ -95,6 +95,7 @@ public class MostrarJurado extends JDialog {
 			btnmodificar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					RegistrarPersona regjur= new RegistrarPersona(juradoselect);
+					GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 					regjur.setModal(true);
 					regjur.setVisible(true);
 					btneliminar.setEnabled(false);
@@ -118,12 +119,14 @@ public class MostrarJurado extends JDialog {
 									"Confirmacion", JOptionPane.YES_NO_OPTION);
 							if(opcion == JOptionPane.OK_OPTION) {
 								GestionEvento.getInstance().eliminarjurado(juradoselect.getCodjurado());;
+								GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 								loadjurados(prioridad);
 							}
 						}
 						btneliminar.setEnabled(false);
 						btnmodificar.setEnabled(false);
 						btncomisiones.setEnabled(false);
+						
 					}
 				});
 				btneliminar.setEnabled(false);

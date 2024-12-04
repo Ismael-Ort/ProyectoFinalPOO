@@ -104,8 +104,8 @@ public class MostrarRecurso extends JDialog {
 						GestionEvento.getInstance().eliminarRecurso(recur.getCodigo());
 						JOptionPane.showMessageDialog(null, "Recurso eliminado", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						cargardatos(recaux);
+						GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 						btnEliminar.setEnabled(false);
-
 					}
 				});
 				btnEliminar.setActionCommand("OK");

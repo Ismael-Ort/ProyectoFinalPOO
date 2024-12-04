@@ -27,7 +27,7 @@ public class Comision implements Serializable{
 		this.trabajos = new ArrayList<>();
 	}
 	
-	public void agregartrabajo(TrabajoCientifico trabajo) {
+	public void agregartrabajos(TrabajoCientifico trabajo) {
 		trabajos.add(trabajo);
 	}
 	

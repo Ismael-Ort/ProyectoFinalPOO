@@ -121,6 +121,7 @@ public class RegistrarRecurso extends JDialog {
 				btnAgregar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						registrarrecurso();
+						GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 					}
 				});
 				btnAgregar.setActionCommand("OK");
@@ -149,6 +150,7 @@ public class RegistrarRecurso extends JDialog {
 			{
 				Recurso rec = new Recurso(txtCodigo.getText(),true, txtUbicacion.getText(), BoxTipo.getSelectedItem().toString(),ptxtDescripcion.getText());
 				GestionEvento.getInstance().agregarrecurso(rec);
+				GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 				JOptionPane.showMessageDialog(null, "Recurso agregado!", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 				clear();
 			}

@@ -291,6 +291,8 @@ public class RegistrarComision extends JDialog {
 
 				            // Registrar la comisión
 				            GestionEvento.getInstance().agregarcomisionesaux(comision);
+				            GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
+
 
 				            // Verificar si se agregó correctamente
 				            if (GestionEvento.getInstance().getcomisionesaux().contains(comision)) {

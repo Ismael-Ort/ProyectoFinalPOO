@@ -11,6 +11,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.border.TitledBorder;
 
+import logico.GestionEvento;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
@@ -27,6 +29,7 @@ public class MenuPrincipal extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		GestionEvento.cargarDatos("DatosEventosPUCMM.dat");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -49,6 +52,14 @@ public class MenuPrincipal extends JFrame {
 		dim = getToolkit().getScreenSize();
 		setSize(dim.width, dim.height-40);
 		setLocationRelativeTo(null);
+		
+		addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
+            }
+		});
+
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
@@ -175,6 +186,13 @@ public class MenuPrincipal extends JFrame {
 		mnNewMenu_4.add(mntmNewMenuItem_8);
 		
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Mostrar Recurso");
+		mntmNewMenuItem_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarRecurso aux = new MostrarRecurso(null);
+				aux.setModal(true);
+				aux.setVisible(true);
+			}
+		});
 		mnNewMenu_4.add(mntmNewMenuItem_9);
 		
 		JMenu mnNewMenu_5 = new JMenu("Calificaciones");

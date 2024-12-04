@@ -293,6 +293,7 @@ public class RegistrarEvento extends JDialog {
 		btnAgregarComision.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				RegistrarComision aux = new RegistrarComision();
+				GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 				aux.setModal(true);
 				aux.setVisible(true);
 				cargardatos();
@@ -319,6 +320,7 @@ public class RegistrarEvento extends JDialog {
 				btnAgregar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						agregarevento();
+						GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 					}
 				});
 				btnAgregar.setActionCommand("OK");
@@ -339,8 +341,7 @@ public class RegistrarEvento extends JDialog {
 		}
 		cargardatos();
 	}
-	
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	
 	public void cargardatos() {
 	    //  Inicializar los modelos
@@ -414,6 +415,7 @@ public class RegistrarEvento extends JDialog {
 					aux.setComisiones(GestionEvento.getInstance().getcomisionesaux());
 					aux.setRecursos(agregados);
 					GestionEvento.getInstance().agregarevento(aux);
+					GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 					JOptionPane.showMessageDialog(null, "Evento creado!", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 					
 					//guardar las comisiones en la comision genral
