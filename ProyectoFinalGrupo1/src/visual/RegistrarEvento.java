@@ -490,4 +490,3 @@ public class RegistrarEvento extends JDialog {
 	}
 
 }
-
