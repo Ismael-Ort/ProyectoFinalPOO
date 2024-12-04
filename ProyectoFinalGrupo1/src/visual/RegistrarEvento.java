@@ -491,5 +491,8 @@ public class RegistrarEvento extends JDialog {
 		agregados.remove(ind);
 	}
 
+
 }
+
+
 

@@ -1,11 +1,15 @@
 package logico;
 
 import java.util.ArrayList;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
+import logico.Usuario;
+
 import java.io.Serializable;
 
 import logico.Jurado;
@@ -31,6 +35,9 @@ public class GestionEvento implements Serializable{
 	private ArrayList<Comision>comisionesaux;
 	private static GestionEvento event = null;
 	
+	private ArrayList<Usuario> usuarios;
+	private Usuario nowuser;
+	
 	private int codjurado;
 	private int codparticipante;
 	private int codtrabajo;
@@ -55,6 +62,8 @@ public class GestionEvento implements Serializable{
 		codcomision = 1;
 	}
 
+	
+	
 
 	
 	public static GestionEvento getInstance(){
@@ -63,6 +72,24 @@ public class GestionEvento implements Serializable{
 		   } 	   
 		   return event;
 	}
+	
+	
+	public Usuario getUser() {
+		return nowuser;
+	}
+
+	public void setUser(Usuario user) {
+		this.nowuser = user;
+	}
+
+	public ArrayList<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(ArrayList<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	
 	
 	public ArrayList<Persona> getPersonas() {
@@ -237,6 +264,10 @@ public class GestionEvento implements Serializable{
 		comisiones.add(comicion);
 	}
 	
+	
+	public void reguser(Usuario aux) {
+		usuarios.add(aux);
+	}
 	
 	//Funciones para buscar
 	
@@ -531,6 +562,7 @@ public class GestionEvento implements Serializable{
 		return posi;
 	}
 	
+
 	//Ficheros
 	public void guardarDatos(String archivo) {
         try (FileOutputStream fos = new FileOutputStream(archivo);
@@ -554,6 +586,21 @@ public class GestionEvento implements Serializable{
             System.err.println("ERROR AL CARGAR LOS DATOS" + e.getMessage());
         }
     }
+
+	
+	
+	public boolean confirmLogin(String usuar, String contra) {
+		boolean login = false;
+		//System.out.println(usuarios.size());
+		for (Usuario user : usuarios) {
+			if(user.getUser().equals(usuar) && user.getContrasena().equals(contra)){
+				nowuser = user;
+				login = true;
+			}
+		}
+		return login;
+	}
+
 
 	
 }
