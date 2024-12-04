@@ -85,18 +85,31 @@ public class Evento implements Serializable{
 		return recursos;
 	}
 
-	public void setRecursos(ArrayList<Recurso> recursos) {
-		this.recursos = recursos;
-	}
-
 	public ArrayList<Comision> getComisiones() {
 		return comisiones;
 	}
 
 	public void setComisiones(ArrayList<Comision> comisiones) {
-		this.comisiones = comisiones;
+		for (Comision comi : comisiones) {
+			agregarcomision(comi);
+		}
 	}
 	
+	public void agregarcomision(Comision c) {
+		comisiones.add(c);
+	}
+	
+	public void agregarrecurso(Recurso cosa) {
+		recursos.add(cosa);
+		cosa.setUbicacion(ubicacion);
+		cosa.setdisponible(false);
+	}
+	
+	public void setRecursos(ArrayList<Recurso> recursoss) {
+		for (Recurso recurso : recursoss) {
+			agregarrecurso(recurso);
+		}
+	}
 	
 	
 	
