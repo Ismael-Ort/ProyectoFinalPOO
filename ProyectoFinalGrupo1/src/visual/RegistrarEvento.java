@@ -151,13 +151,13 @@ public class RegistrarEvento extends JDialog {
 	    SpinnerNumberModel cupoModel = new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1);
 	    spnCupo.setModel(cupoModel);
 	    
-	    // Agregar un ChangeListener para evitar valores negativos
+
 	    spnCupo.addChangeListener(new ChangeListener() {
 	        public void stateChanged(ChangeEvent e) {
-	            // Verificar que el valor no sea negativo
+
 	            int value = (int) spnCupo.getValue();
 	            if (value < 0) {
-	                spnCupo.setValue(0);  // Si el valor es menor que 0, ajustamos el valor a 0
+	                spnCupo.setValue(0);  
 	            }
 	        }
 	    });
@@ -344,12 +344,11 @@ public class RegistrarEvento extends JDialog {
 
 	
 	public void cargardatos() {
-	    //  Inicializar los modelos
+
 	    if (model == null || model2 == null || model3 == null) {
-	        return; // Salir si alguno de los modelos es nulo
+	        return; 
 	    }
-	    
-	    // Asegurarse de que las listas no son nulas
+
 	    if (disponible == null) {
 	        disponible = new ArrayList<>();
 	    }
@@ -363,7 +362,6 @@ public class RegistrarEvento extends JDialog {
 
 	    rows = new Object[model.getColumnCount()];
 
-	    // Recurso disponibles
 	    if (disponible != null) {
 	        for (Recurso rec : disponible) {
 	            if (rec != null && rec.getdisponible() == true) {
@@ -374,7 +372,6 @@ public class RegistrarEvento extends JDialog {
 	        }
 	    }
 
-	    // Recurso seleccionado
 	    if (agregados != null) {
 	        for (Recurso rec : agregados) {
 	            if (rec != null) {
@@ -387,7 +384,6 @@ public class RegistrarEvento extends JDialog {
 
 	    rows = new Object[model3.getColumnCount()];
 
-	    // Comisiones seleccionadas
 	    if (GestionEvento.getInstance().getcomisionesaux() != null) {
 	        for (Comision com : GestionEvento.getInstance().getcomisionesaux()) {
 	            if (com != null) {
@@ -418,7 +414,7 @@ public class RegistrarEvento extends JDialog {
 					GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 					JOptionPane.showMessageDialog(null, "Evento creado!", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 					
-					//guardar las comisiones en la comision genral
+	
 					for(Comision com : GestionEvento.getInstance().getcomisionesaux()) 
 					{
 						GestionEvento.getInstance().agregarcomisiones(com);
@@ -446,8 +442,7 @@ public class RegistrarEvento extends JDialog {
 		GestionEvento.getInstance().getcomisionesaux().clear();
 		spnCupo.setValue(Integer.valueOf(0));
 		cargardatos();
-		//spnFechaInicio.setValue(value);
-		//spnFechaFin.setValue(value);
+
 	}
 	
 	public int inddisponible(Recurso rec) {

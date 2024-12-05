@@ -62,17 +62,12 @@ public class GestionEvento implements Serializable{
 		codcomision = 1;
 	}
 
-	
-	
-
-	
 	public static GestionEvento getInstance(){
 		   if(event == null){
 			 event = new GestionEvento();  
 		   } 	   
 		   return event;
 	}
-	
 	
 	public Usuario getUser() {
 		return nowuser;
