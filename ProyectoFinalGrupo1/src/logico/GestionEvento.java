@@ -48,7 +48,6 @@ public class GestionEvento implements Serializable{
 	
 	public GestionEvento() {
 		super();
-		this.usuarios = new ArrayList<>();
 		this.personas= new ArrayList<>();
 		this.trabajos = new ArrayList<>();
 		this.recursos = new ArrayList<>();
@@ -63,18 +62,12 @@ public class GestionEvento implements Serializable{
 		codcomision = 1;
 	}
 
-	
 	public static GestionEvento getInstance(){
 		   if(event == null){
 			 event = new GestionEvento();  
 		   } 	   
 		   return event;
 	}
-	
-	public static void setEvento(GestionEvento aux) {
-		GestionEvento.event = aux;
-	}
-	
 	
 	public Usuario getUser() {
 		return nowuser;
@@ -602,7 +595,6 @@ public class GestionEvento implements Serializable{
 		}
 		return login;
 	}
-	
 
 
 	

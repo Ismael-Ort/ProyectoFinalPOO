@@ -240,7 +240,7 @@ public class RegistrarComision extends JDialog {
 				btnagregar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						try {
-				            // Validar que el presidente del jurado esté asignado
+				            
 				            if (presidenteJurado == null) {
 				                JOptionPane.showMessageDialog(null, 
 				                    "No se puede crear una comisión sin al menos un presidente", 
@@ -248,8 +248,7 @@ public class RegistrarComision extends JDialog {
 				                    JOptionPane.ERROR_MESSAGE);
 				                return;
 				            }
-
-				            // Validar que los campos obligatorios no estén vacíos
+				        
 				            if (txtcodigo.getText().trim().isEmpty() || cmbarea.getSelectedItem() == null) {
 				                JOptionPane.showMessageDialog(null, 
 				                    "Debe llenar todos los campos obligatorios", 
@@ -258,12 +257,10 @@ public class RegistrarComision extends JDialog {
 				                return;
 				            }
 
-				            // Crear la comisión
 				            Comision comision = new Comision(txtcodigo.getText().trim(), 
 				                                             cmbarea.getSelectedItem().toString(), 
 				                                             presidenteJurado);
 
-				            // Verificar si hay jurados en la tabla y agregarlos
 				            if (modeltableadd.getRowCount() == 0) {
 				                JOptionPane.showMessageDialog(null, 
 				                    "Debe agregar al menos un jurado a la comisión", 
@@ -280,7 +277,6 @@ public class RegistrarComision extends JDialog {
 				                }
 				            }
 
-				            // Validar que la comisión tenga al menos un jurado además del presidente
 				            if (comision.getJurados().size() == 0) {
 				                JOptionPane.showMessageDialog(null, 
 				                    "Ingrese más de un jurado para cada comisión", 
@@ -289,12 +285,10 @@ public class RegistrarComision extends JDialog {
 				                return;
 				            }
 
-				            // Registrar la comisión
 				            GestionEvento.getInstance().agregarcomisionesaux(comision);
 				            GestionEvento.getInstance().guardarDatos("DatosEventosPUCMM.dat");
 
 
-				            // Verificar si se agregó correctamente
 				            if (GestionEvento.getInstance().getcomisionesaux().contains(comision)) {
 				                JOptionPane.showMessageDialog(null, 
 				                    "Comisión registrada correctamente", 
